@@ -20,32 +20,32 @@ namespace Nackowskis.Controllers
             _signInManager = signInManager;
         }
 
-        public IActionResult Register()
-        {
-            return View();
-        }
-        public IActionResult Login()
-        {
-            return View();
-        }
+        //public IActionResult Register()
+        //{
+        //    return View();
+        //}
+        //public IActionResult Login()
+        //{
+        //    return View();
+        //}
 
-        public async Task<IActionResult> Logout()
-        {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
-        }
+        //public async Task<IActionResult> Logout()
+        //{
+        //    await _signInManager.SignOutAsync();
+        //    return RedirectToAction("Index", "Home");
+        //}
 
-        [HttpPost]
-        public async Task<IActionResult> Login(LoginModel model)
-        {
-            var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, false, false);
-            if (result.Succeeded)
-            {
-                return RedirectToAction("Dashboard", "Home");
-            }
-            return View();
+        //[HttpPost]
+        //public async Task<IActionResult> Login(LoginModel model)
+        //{
+        //    var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, false, false);
+        //    if (result.Succeeded)
+        //    {
+        //        return RedirectToAction("Dashboard", "Home");
+        //    }
+        //    return View();
            
-        }
+        //}
         
     }
 }
